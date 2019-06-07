@@ -25,3 +25,11 @@ Syntax:  public static  Collection  checkedCollection(Collection c, Class type)
     List huh = names;
     List<Integer> numbers = huh;
     numbers.add(42);
+
+3.Will this code compile successfully?
+class Test <T> {
+private T[] array = null;
+}
+4  class Test <T> {
+private T[] array = new T[7];
+}
