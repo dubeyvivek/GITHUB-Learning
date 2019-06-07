@@ -11,3 +11,18 @@ The generics mechanism in the language provides compile-time (static) type check
 not corrupt the collection by inserting an element of the wrong type.
 
 Syntax:  public static  Collection  checkedCollection(Collection c, Class type)
+
+// creating object of List<String> 
+            List<String> arlst = new ArrayList<String>(); 
+  
+            // Adding element to arrlist 
+            arlst.add("CSS"); 
+            arlst.add("PHP"); 
+            arlst.add("HTML"); 
+            arlst.add("TajMahal"); 
+  
+            // printing the arrlist 
+            System.out.println("List: " + arlst); 
+  
+            // create typesafe view of the collection 
+            Collection<String> tslst = Collections.checkedCollection(arlst, String.class); 
