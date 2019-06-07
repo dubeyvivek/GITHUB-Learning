@@ -12,17 +12,16 @@ not corrupt the collection by inserting an element of the wrong type.
 
 Syntax:  public static  Collection  checkedCollection(Collection c, Class type)
 
-// creating object of List<String> 
-            List<String> arlst = new ArrayList<String>(); 
-  
-            // Adding element to arrlist 
-            arlst.add("CSS"); 
-            arlst.add("PHP"); 
-            arlst.add("HTML"); 
-            arlst.add("TajMahal"); 
-  
-            // printing the arrlist 
-            System.out.println("List: " + arlst); 
-  
-            // create typesafe view of the collection 
-            Collection<String> tslst = Collections.checkedCollection(arlst, String.class); 
+ List<String> names = new ArrayList<>();
+    Collections.addAll(names, "John", "Anton", "Heinz");
+    List huh = names;
+    List<Integer> numbers = huh;
+    numbers.add(42);
+    
+    this will cause class cast exception . to give run time safety below code 
+     List<String> names = Collections.checkedList(
+        new ArrayList<>(), String.class);
+    Collections.addAll(names, "John", "Anton", "Heinz");
+    List huh = names;
+    List<Integer> numbers = huh;
+    numbers.add(42);
